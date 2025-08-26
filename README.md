@@ -101,3 +101,18 @@ jellyfin:
       - "0.0.0.0:1900:1900/udp" #optional
     restart: unless-stopped
 ```
+
+### Afterwards
+```
+sudo docker compose down
+sudo docker compose up -d
+sudo docker exec -it jellyfin nvidia-smi
+```
+
+That last command should output the GPU status and information.  If so, you're all set!
+
+## Configure Jellyfin to use the GPU
+Enable Nvidia NVENC under Playback -> Transcoding
+
+Check Jellyfin logs to verify it's working:
+```docker logs -f jellyfin```
