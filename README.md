@@ -42,7 +42,7 @@ Add your graphics card as a new PCI device
 
 Set device to use All functions and PCI Express. DO NOT set as primary GPU!
 
-## Install nvidia drivers and nvidia-smi on the host
+## Install nvidia drivers and nvidia-smi on the host VM
 ```
 sudo apt update
 ubuntu-drivers devices
@@ -53,7 +53,7 @@ sudo reboot
 This should output your GPU status information
 ```nvidia-smi```
 
-## Install nvidia container toolkit
+## Install nvidia container toolkit on the host VM
 ```
 # Repo + toolkit
 curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | \
@@ -68,7 +68,7 @@ sudo nvidia-ctk runtime configure
 sudo systemctl restart docker
 ```
 
-## Add nvidia GPU options to docker-compose Jellyfin section
+## Add nvidia GPU options to docker-compose Jellyfin section in the host VM
 ```
 jellyfin:
     image: lscr.io/linuxserver/jellyfin:latest
