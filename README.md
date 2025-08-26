@@ -114,5 +114,8 @@ That last command should output the GPU status and information.  If so, you're a
 ## Configure Jellyfin to use the GPU
 Enable Nvidia NVENC under Playback -> Transcoding
 
-Check Jellyfin logs to verify it's working:
+Run this on the host during transcoding and you should see a Jellyfin process using the GPU:
+```watch -n1 nvidia-smi```
+
+Can also check Jellyfin logs to verify it's working:
 ```docker logs -f jellyfin```
