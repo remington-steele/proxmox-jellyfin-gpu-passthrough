@@ -51,6 +51,7 @@ sudo reboot
 ```
 
 This should output your GPU status information
+
 ```nvidia-smi```
 
 ## Install nvidia container toolkit on the host VM
@@ -115,7 +116,9 @@ That last command should output the GPU status and information.  If so, you're a
 Enable Nvidia NVENC under Playback -> Transcoding
 
 Run this on the host during transcoding and you should see a Jellyfin process using the GPU:
+
 ```watch -n1 nvidia-smi```
 
 Can also check Jellyfin logs to verify it's working:
+
 ```docker logs -f jellyfin```
